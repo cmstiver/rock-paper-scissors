@@ -56,19 +56,22 @@ function game(round) {
     console.log('Computer: '+cScore)
 }
 
+function checkScore(){
+    if (pScore >= 3) {
+        alert('You win, you super cool dude.')
+    } else if (cScore >= 3) {
+        alert('Uh-oh, you\'re a big loser.')
+    } else {
+        game(playRound())
+    }
+}
+
 let pScore = 0;
 let cScore = 0;
 
 game(playRound())
-game(playRound())
-game(playRound())
-game(playRound())
-game(playRound())
-
-if (pScore > cScore) {
-    alert('You win, you super cool dude.')
-} else if (pScore = cScore) {
-    alert('The computer is a formidable opponent. It\'s a draw')
-} else {
-    alert('Uh-oh, you\'re a big loser.')
-}
+checkScore()
+checkScore()
+checkScore()
+checkScore()
+checkScore()
