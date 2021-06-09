@@ -69,14 +69,21 @@ function checkScore(){
 let pScore = 0;
 let cScore = 0;
 
+alert('Round: 1 | Player: '+pScore +' | Computer: '+cScore)
 game(playRound())
+alert('Round: 2 | Player: '+pScore +' | Computer: '+cScore)
 checkScore() //I know there's a better way, but I don't know how yet lol.
+alert('Round: 3 | Player: '+pScore +' | Computer: '+cScore)
 checkScore()
+alert('Round: 4 | Player: '+pScore +' | Computer: '+cScore)
 checkScore()
+alert('Round: 5 | Player: '+pScore +' | Computer: '+cScore)
 checkScore()
 
 if (pScore > cScore) {
     alert('You win, you super cool dude.')
+} else if (pScore === cScore){
+    alert ('The computer is formidable. It\'s a draw.')
 } else {
     alert('Uh-oh, you\'re a big loser.')
 }
