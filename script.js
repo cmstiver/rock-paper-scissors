@@ -10,8 +10,9 @@ function computerPlay() {
 function playRound() {
     let playerSelectionInitial = prompt('Rock, Paper, or Scissors?'); //player input
     let playerSelection = playerSelectionInitial.toLowerCase();
+    console.log(playerSelection)
     let computerSelection = computerPlay(); //computer input
-    if (playerSelection !== 'rock'||'paper'||'scissors') {
+    if (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
         alert('Please enter rock, paper, or scissors.')
         playRound()
     } else {
