@@ -11,6 +11,10 @@ function playRound() {
     let playerSelectionInitial = prompt('Rock, Paper, or Scissors?'); //player input
     let playerSelection = playerSelectionInitial.toLowerCase();
     let computerSelection = computerPlay(); //computer input
+    if (playerSelection !== 'rock'||'paper'||'scissors') {
+        alert('Please enter rock, paper, or scissors.')
+        playRound()
+    } else {
         if (playerSelection === 'rock' && computerSelection === 'paper')
         {
             alert('Failure. The computer chose '+computerSelection+'.');
@@ -39,6 +43,7 @@ function playRound() {
             alert('Tie. The computer chose '+computerSelection+'.');
         }
   }
+}
 
 function game(round) {
        if (round === 'win') {
