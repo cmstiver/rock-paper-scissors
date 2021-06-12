@@ -1,0 +1,12 @@
+#display {
+    margin-top: 300px;
+    text-align: center;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+body {
+    background-color: rgb(92, 126, 131);
+}
