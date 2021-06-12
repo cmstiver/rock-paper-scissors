@@ -10,30 +10,30 @@ function createChoice() {
 function checkResult() {
         if (playerSelection === 'rock' && computerSelection === 'paper')
         {
-            alert('Failure. The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Failure. The computer chose '+computerSelection+'.';
             return 'fail';
         } else if (playerSelection === 'rock' && computerSelection === 'scissors')
         {
-            alert('Win! The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Win! The computer chose '+computerSelection+'.';
             return 'win';
         } else if (playerSelection === 'paper' && computerSelection === 'scissors')
         {
-            alert('Failure. The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Failure. The computer chose '+computerSelection+'.';
             return 'fail';
         } else if (playerSelection === 'paper' && computerSelection === 'rock')
         {
-            alert('Win! The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Win! The computer chose '+computerSelection+'.';
             return 'win';
         } else if (playerSelection === 'scissors' && computerSelection === 'rock')
         {
-            alert('Failure. The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Failure. The computer chose '+computerSelection+'.';
             return 'fail';
         } else if (playerSelection === 'scissors' && computerSelection === 'paper')
         {
-            alert('Win! The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Win! The computer chose '+computerSelection+'.';
             return 'win';
         } else {
-            alert('Tie. The computer chose '+computerSelection+'.');
+            alert1.textContent = 'Tie. The computer chose '+computerSelection+'.';
         }
   }
 
@@ -46,15 +46,15 @@ function playRound() {
     computerSelection = createChoice()
     let result = checkResult()
     if (result === 'win') {
-            pScore++
+            ++pScore
             round++
             pScoreCounter.textContent = 'Your Score: '+pScore
             roundCounter.textContent = 'Round: '+round
             checkScore()
     } else if (result === 'fail') {
-            cScore++
+            ++cScore
             round++
-            cScoreCounter.textContent = 'Your Score: '+cScore
+            cScoreCounter.textContent = 'Computer Score: '+cScore
             roundCounter.textContent = 'Round: '+round
             checkScore()
      } else {
@@ -66,16 +66,24 @@ function playRound() {
 function checkScore() {
     if (pScore >= 3) {
         alert('You win, you super cool dude.')
+        buttons.remove()
     } else if (cScore >= 3) {
         alert('Uh-oh, you\'re a big loser.')
+        buttons.remove()
     } else if (round === 5) {
         if (pScore > cScore) {
             alert('You win, you super cool dude.')
-        } else {
+            buttons.remove()
+        } else if (cScore > pScore) {
             alert('Uh-oh, you\'re a big loser.')
+            buttons.remove()
+        } else {
+            alert('This computer is a formidable opponent. It\'s a draw.')
+            buttons.remove()
         }
     }
     }
+
 
 
 
@@ -92,6 +100,8 @@ let round = 0
 let pScoreCounter = document.querySelector('#pScore')
 let cScoreCounter = document.querySelector('#cScore')
 let roundCounter = document.querySelector('#round')
+let alert1 = document.querySelector('#alert')
+let buttons = document.querySelector('#buttons')
 
 let rock = document.querySelector('#rock');
 rock.addEventListener('click', inputAnswer);
